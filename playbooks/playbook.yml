@@ -1,7 +1,9 @@
 ---
 # playbook.yml
 - name: 'Provision Image'
-  hosts: default
+  hosts: all
+  become_user: root
+  become_method: sudo
   become: true
 
   tasks:
