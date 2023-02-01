@@ -1,4 +1,4 @@
-/* data "amazon-ami" "base_image" {
+data "amazon-ami" "base_image" {
   region = "ap-northeast-2"
   filters = {
     name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
@@ -6,17 +6,15 @@
   }
   most_recent = true
   owners      = ["099720109477"]
-} */
+}
 
 source "amazon-ebs" "example" {
   region = "ap-northeast-2"
-  //source_ami     = data.amazon-ami.base_image.id
-  source_ami              = "ami-013218fccb68a90d4"
+  source_ami     = data.amazon-ami.base_image.id
+  #source_ami              = "ami-013218fccb68a90d4"
   instance_type           = "t2.micro"
-  ssh_username            = "ec2-user"
-  ssh_agent_auth          = false
+  ssh_username            = "ubuntu"
   ami_name                = "hcp_packer_demo_app_{{timestamp}}"
-  temporary_key_pair_type = "ed25519"
 }
 
 build {
