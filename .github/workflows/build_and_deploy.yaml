@@ -26,6 +26,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
 
+      - name: Compile Application
+        env:
+          GOOS: linux
+          GOARCH: arm64 # target architecture is ubuntu on arm64 instances
+        run: go build -o bin/server app/main.go
+
       - name: Packer Init
         working-directory: ./packer
         run: packer init .
