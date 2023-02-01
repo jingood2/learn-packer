@@ -14,7 +14,7 @@ source "amazon-ebs" "example" {
   #source_ami              = "ami-013218fccb68a90d4"
   instance_type           = "t2.micro"
   ssh_username            = "ubuntu"
-  ami_name                = "hcp_packer_demo_app_{{timestamp}}"
+  ami_name                = "learn_packer_{{timestamp}}"
 }
 
 build {
