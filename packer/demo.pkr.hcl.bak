@@ -1,24 +1,26 @@
-data "amazon-ami" "base_image" {
-  region = "us-west-2"
+/* data "amazon-ami" "base_image" {
+  region = "ap-northeast-2"
   filters = {
-    name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-arm64-server-*"
+    name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
     root-device-type    = "ebs"
   }
   most_recent = true
   owners      = ["099720109477"]
-}
+} */
 
 source "amazon-ebs" "example" {
-  region         = "us-west-2"
-  source_ami     = data.amazon-ami.base_image.id
-  instance_type  = "t4g.micro"
-  ssh_username   = "ubuntu"
-  ssh_agent_auth = false
-  ami_name       = "hcp_packer_demo_app_{{timestamp}}"
+  region = "ap-northeast-2"
+  //source_ami     = data.amazon-ami.base_image.id
+  source_ami              = "ami-013218fccb68a90d4"
+  instance_type           = "t2.micro"
+  ssh_username            = "ec2-user"
+  ssh_agent_auth          = false
+  ami_name                = "hcp_packer_demo_app_{{timestamp}}"
+  temporary_key_pair_type = "ed25519"
 }
 
 build {
-  hcp_packer_registry {
+  /* hcp_packer_registry {
     bucket_name = "hcp-packer-demo"
     description = "Super simple static website"
 
@@ -30,7 +32,7 @@ build {
     build_labels = {
       "foo-version" = "1.4.2",
     }
-  }
+  } */
 
   sources = ["source.amazon-ebs.example"]
 

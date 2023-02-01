@@ -1,0 +1,16 @@
+2023/02/02 02:57:05 [INFO] Packer version: 1.8.5 [go1.19.4 darwin amd64]
+2023/02/02 02:57:05 [TRACE] discovering plugins in /usr/local/Cellar/packer/1.8.5/libexec/bin
+2023/02/02 02:57:05 [TRACE] discovering plugins in /Users/james/.config/packer/plugins
+2023/02/02 02:57:05 [TRACE] discovering plugins in .
+2023/02/02 02:57:05 [TRACE] discovering plugins in 
+2023/02/02 02:57:05 [TRACE] discovering plugins in /usr/local/bin
+2023/02/02 02:57:05 [DEBUG] Discovered plugin: amazon = /usr/local/bin/github.com/hashicorp/amazon/packer-plugin-amazon_v1.2.1_x5.0_darwin_amd64
+2023/02/02 02:57:05 [INFO] found external [chroot ebs ebssurrogate ebsvolume instance] builders from amazon plugin
+2023/02/02 02:57:05 [INFO] found external [import] post-processors from amazon plugin
+2023/02/02 02:57:05 found external [ami parameterstore secretsmanager] datasource from amazon plugin
+2023/02/02 02:57:05 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2023/02/02 02:57:05 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/james/.packerconfig
+2023/02/02 02:57:05 [WARN] Config file doesn't exist: /Users/james/.packerconfig
+2023/02/02 02:57:05 [INFO] Setting cache directory: /Users/james/.cache/packer
+2023/02/02 02:57:05 [INFO] (telemetry) Finalizing.
+2023/02/02 02:57:05 waiting for all plugin processes to complete...
