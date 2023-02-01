@@ -39,6 +39,10 @@ build {
     script = "./app.sh"
   }
 
+  provisioner "ansible" {
+      playbook_file = "../playbooks/playbook.yml"
+    }
+
   post-processor "manifest" {
     output     = "packer_manifest.json"
     strip_path = true
