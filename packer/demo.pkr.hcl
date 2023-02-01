@@ -34,20 +34,9 @@ build {
 
   sources = ["source.amazon-ebs.example"]
 
-  // Create directories
-  provisioner "shell" {
-    inline = ["sudo mkdir /opt/webapp/"]
-  }
-
-  // Copy binary to tmp
-  provisioner "file" {
-    source      = "../bin/server"
-    destination = "/tmp/"
-  }
-
   // move binary to desired directory
   provisioner "shell" {
-    inline = ["sudo mv /tmp/server /opt/webapp/"]
+    script = "./app.sh"
   }
 
   post-processor "manifest" {
