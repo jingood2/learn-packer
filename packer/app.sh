@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sleep 30
+sleep 10
 
-sudo yum update -y
+sudo apt-get update -y
