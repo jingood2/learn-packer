@@ -42,7 +42,6 @@ build {
   provisioner "ansible-local" {
       command = "ansible-playbook"
       playbook_file = "../playbooks/install-apt.yml"
-      user = "ubuntu"
   }
 
   post-processor "manifest" {
