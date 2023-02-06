@@ -36,13 +36,13 @@ build {
 
   // move binary to desired directory
   provisioner "shell" {
-    script = "./packer/app.sh"
+    script = "./playbooks/app.sh"
   }
 
   provisioner "ansible-local" {
       command = "ansible-playbook"
       #playbook_file = "../playbooks/install-apt.yml"
-      playbook_file = "./packer/install-apt.yml"
+      playbook_file = "./playbooks/install-apt.yml"
   }
 
   post-processor "manifest" {
