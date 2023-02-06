@@ -40,7 +40,9 @@ build {
   }
 
   provisioner "ansible-local" {
-    playbook_file = "../playbooks/playbook.yml"
+      command = "ansible-playbook"
+      playbook_file = "../playbooks/install-apt.yml"
+      user = "ubuntu"
   }
 
   post-processor "manifest" {
