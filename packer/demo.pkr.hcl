@@ -36,7 +36,8 @@ build {
 
   // move binary to desired directory
   provisioner "shell" {
-    script = "./app.sh"
+    command = "ls -al"
+    #script = "./app.sh"
   }
 
   provisioner "ansible-local" {
