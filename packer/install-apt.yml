@@ -1,0 +1,12 @@
+---
+- name: 'Provision Image'
+  hosts: localhost
+  become: true
+  tasks:
+  - name: Install packages
+    apt:
+      name:
+      - ntpdate
+      - nmap
+      state: latest
+      cache_valid_time: 3600
