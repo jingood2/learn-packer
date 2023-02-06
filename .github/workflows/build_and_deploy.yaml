@@ -56,14 +56,3 @@ jobs:
           target: ./packer
         env:
           PACKER_LOG: 1
-
-
-
-
-      - name: Packer Init
-        working-directory: ./packer
-        run: packer init .
-
-      - name: Packer Build
-        working-directory: ./packer
-        run: packer build .
