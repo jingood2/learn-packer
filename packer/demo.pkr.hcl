@@ -40,7 +40,9 @@ build {
   }
 
   provisioner "ansible" {
+      command = "ansible-playbook"
       playbook_file = "../playbooks/playbook.yml"
+      user = "ubuntu"
     }
 
   post-processor "manifest" {
