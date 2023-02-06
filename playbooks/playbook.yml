@@ -1,15 +1,12 @@
----
 # playbook.yml
 - name: 'Provision Image'
-  hosts: localhost
+  hosts: all
   become_user: root
   become_method: sudo
   become: true
 
   tasks:
-    - name: install Apache
-      apt:
-        name:
-        - httpd
+    - name: install Apache2
+      package:
+        name: 'apache2'
         state: latest
-        cache_valid_time: 3600
