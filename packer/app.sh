@@ -2,5 +2,5 @@
 
 sleep 10
 
-sudo apt update -y
+sudo apt-get update -y
 sudo apt install ansible -y
