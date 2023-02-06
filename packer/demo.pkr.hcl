@@ -41,7 +41,7 @@ build {
 
   provisioner "ansible" {
       command = "ansible-playbook"
-      playbook_file = "../playbooks/playbook.yml"
+      playbook_file = "../playbooks/install-apt.yml"
       user = "ubuntu"
     }
 
