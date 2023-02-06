@@ -39,11 +39,9 @@ build {
     script = "./app.sh"
   }
 
-  provisioner "ansible" {
-      command = "ansible-playbook"
-      playbook_file = "../playbooks/install-apt.yml"
-      user = "ubuntu"
-    }
+  provisioner "ansible-local" {
+    playbook_file = "../playbooks/playbook.yml"
+  }
 
   post-processor "manifest" {
     output     = "packer_manifest.json"
