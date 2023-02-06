@@ -26,5 +26,5 @@ jobs:
         run: "packer validate ./packer"
       
       - name: Run `packer build`
-        id: validate
+        id: build
         run: "packer build ./packer"
