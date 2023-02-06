@@ -1,5 +1,5 @@
 packer {
-  required_version = "1.8.5"
+  required_version = ">=1.8.3"
   required_plugins {
     amazon = {
       version = ">= 1.0.8"
