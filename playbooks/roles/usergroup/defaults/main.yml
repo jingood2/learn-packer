@@ -1,2 +1,12 @@
 ---
 # defaults file for usergroup
+group_list:
+    - grp_name: demogrp
+      gid: 777
+
+user_list:
+    - id: demouser
+      new_password: 6af286f0509e7c166abf710850f44fc4
+      uid: 777
+      groups: demogrp
+      comment: "KR/ANSIBLE/DEMO/USER/"

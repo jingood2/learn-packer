@@ -1,2 +1,18 @@
 ---
 # tasks file for usergroup
+- name: create 'groups'
+  group:
+    name: "{{ item.grp_name }}"
+    gid: "{{ item.gid }}"
+    state: present
+  loop: "{{ group_list }}"
+
+- name: create 'users'
+  user:
+    name: "{{ item.id }}"
+    update_password: always
+    uid: "{{ item.uid }}"
+    group: "{{ item.groups }}"
+    comment: "{{ item.comment }}"
+    password: "{{ item.new_password | password_hash('sha512') }}"
+  loop: "{{ user_list }}"
