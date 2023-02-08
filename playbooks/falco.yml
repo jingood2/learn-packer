@@ -1,0 +1,21 @@
+
+
+---
+- name: Install Falco Agent on EC2
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Install Falco Agent on EC2
+      shell: |
+        sudo apt-get update && \
+        sudo apt-get install -y falco-agent
+
+    - name: Configure Falco Agent on EC2
+      shell: |
+        sudo falco-agent config --api_key <API_KEY> --url <FALCO_SERVER_URL> --log_level debug
+
+    - name: Start Falco Agent on EC2
+      shell: |
+        sudo service falco-agent start

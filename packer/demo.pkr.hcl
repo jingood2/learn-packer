@@ -42,7 +42,8 @@ build {
   provisioner "ansible-local" {
       command = "ansible-playbook"
       #playbook_file = "../playbooks/install-apt.yml"
-      playbook_file = "./playbooks/playbook.yml"
+      #playbook_file = "./playbooks/playbook.yml"
+      playbook_file = "./playbooks/main.yml"
   }
 
   post-processor "manifest" {

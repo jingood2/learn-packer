@@ -1,0 +1,13 @@
+
+
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install New Relic Agent on Ubuntu
+      apt: name=newrelic-sysmond state=present
+      register: newrelic_install
+
+    - name: Configure New Relic Agent on Ubuntu
+      shell: nrsysmond-config --set license_key={{ newrelic_license_key }} && /etc/init.d/newrelic-sysmond start
+      when: newrelic_install.changed
