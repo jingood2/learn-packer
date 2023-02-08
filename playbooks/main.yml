@@ -2,8 +2,11 @@
 - name: use motd role playbook
   hosts: localhost
   become: true
+  vars_files:
+    - ./roles/usergroup/vars/userlist.yml
 
   roles:
   - role: common
   - role: motd
     system_manager: admin@golinuxcloud.com
+  - role: usergroup
