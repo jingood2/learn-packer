@@ -4,16 +4,4 @@
   become: true ## Perform tasks as root user
 
   roles:
-  #  - common
      - usergroup
-  #   - apache
-   #  - newrelic
-    # - falco
-
-  #post_tasks:
-  #   - name: install contents from local file
-  #     copy:
-  #       src: files/html/
-  #       dest: "/var/www/vhosts/{{ ansible_hostname }}"
-  #     changed_when: true  ## This is to forcefully mark a change
-  #     notify: restart_httpd  ## Execute the handler with the name restart_httpd
