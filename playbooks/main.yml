@@ -7,3 +7,6 @@
   roles:
   - role: motd
     system_manager: admin@golinuxcloud.com
+  - role: usergroup
+    vars_files: 
+      - userlist.yml
