@@ -8,5 +8,3 @@
   - role: motd
     system_manager: admin@golinuxcloud.com
   - role: usergroup
-    vars_files:
-      - vars/userlist.yml
