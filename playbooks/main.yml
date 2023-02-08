@@ -5,5 +5,5 @@
   become: true
 
   roles:
-    - role: motd
+    - role: roles/motd
       system_manager: admin@golinuxcloud.com
