@@ -1,10 +1,11 @@
 ---
 - name: use motd role playbook
   hosts: localhost
-  user: ansible
   become: true
 
   roles:
   - role: motd
     system_manager: admin@golinuxcloud.com
   - role: usergroup
+    vars_files: 
+    - userlist.yml
