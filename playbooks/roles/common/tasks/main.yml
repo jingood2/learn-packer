@@ -1,2 +1,17 @@
 ---
 # tasks file for common
+- name: remove unused apt packages -ntp
+  become: true
+  apt:
+    name: ntp
+    state: absent
+
+- name: set Asia/Seoul timezone
+  become: true
+  timezone:
+    name: Asia/Seoul
+
+- name: install Apache2
+  package:
+    name: 'apache2'
+    state: latest
