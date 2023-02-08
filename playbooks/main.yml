@@ -1,7 +1,8 @@
 ---
 - name: create apache vhost
   hosts: localhost ## Execute on this host only
+  user: ansible
   become: true ## Perform tasks as root user
 
   roles:
-     - usergroup
+     - role: usergroup
