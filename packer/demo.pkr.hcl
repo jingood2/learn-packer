@@ -46,7 +46,8 @@ build {
       playbook_file = "./playbooks/main.yml"
       role_paths = [
         "./playbooks/roles/motd",
-        "./playbooks/roles/common"
+        "./playbooks/roles/common",
+        "./playbooks/roles/usergroup"
       ]
   }
 
