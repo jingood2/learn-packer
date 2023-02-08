@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   vars_files:
-    - ./roles/usergroup/vars/userlist.yml
+    - ../playbooks/roles/usergroup/vars/userlist.yml
 
   roles:
   - role: common
