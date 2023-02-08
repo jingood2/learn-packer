@@ -1,8 +1,9 @@
 ---
-- name: create apache vhost
-  hosts: localhost ## Execute on this host only
+- name: use motd role playbook
+  hosts: localhost
   user: ansible
-  become: true ## Perform tasks as root user
+  become: true
 
   roles:
-    - usergroup
+    - role: motd
+      system_manager: admin@golinuxcloud.com
